@@ -122,5 +122,5 @@ VALUES (DEFAULT,'Kurt Cobain',
     'They laugh at me because I’m different; I laugh at them because theyre’re all the same.',
     '1967 - 1994',
     'Music',
-    'https://www.newyorker.com/magazine/1994/04/25/generation-exit');
+    'https://media.newyorker.com/photos/5ad514a5cd7220727ab349eb/master/w_2560%2Cc_limit/940425_ra505.jpg');
 
