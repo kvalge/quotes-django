@@ -119,7 +119,7 @@ VALUES (DEFAULT,'Malala Yousafzai',
 
 INSERT INTO quotes_app_quote (id, author, quote, years, area, image)
 VALUES (DEFAULT,'Kurt Cobain',
-    'They laugh at me because I'm different; I laugh at them because they're all the same.',
+    'They laugh at me because I’m different; I laugh at them because theyre’re all the same.',
     '1967 - 1994',
     'Music',
     'https://www.newyorker.com/magazine/1994/04/25/generation-exit');
