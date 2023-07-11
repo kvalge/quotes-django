@@ -1,5 +1,5 @@
 # Quotes Application  
-A web app to display and manage quotes.  
+A web app to display and manage quotes of famous persons.  
 
 Framework: Django.  
 
@@ -19,7 +19,7 @@ Created user: python manage.py createsuperuser
 Installed psycopg2.  
 
 # Start app  
-Created migration for the model item:  
+Created migration for the model:  
 python manage.py makemigrations    
 Created db:  
 python manage.py migrate  
