@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mt-4 mb-4">Edit the Quote</h1>
+<div class="container">
+    <br>
+    {% for quote in quotes %}
+    <br>
+    <h3>{{quote.author}}</h3>
+    <div class="quote">{{quote.quote}}</div>
+    <br>
+        <form action="/{{quote.id}}" method=post>
+            {% csrf_token %}
+        <input type="hidden" name="id" value="">
+        <input type="submit" value="Update" class="button"/>
+    </form>
+    <form action="/delete/{{quote.id}}" method=post>
+        <input type="hidden" name="id" value="">
+        <input type="submit" value="Delete" class="button"/>
+    </form>
+    <div>_____________________</div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}

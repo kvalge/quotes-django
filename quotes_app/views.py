@@ -25,3 +25,9 @@ def new(request):
                                 image=image)
             messages.success(request, "New quote submitted!")
     return render(request, "new.html")
+
+
+def edit(response):
+    quotes = Quote.objects.all().order_by('author')
+    return render(response, "edit.html", {"quotes": quotes})
+    
