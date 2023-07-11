@@ -4,6 +4,7 @@ A web app to display and manage quotes.
 Framework: Django.  
 
 Used IDE: Visual Studio Code.  
+Database: PostgreSQL.  
 
 # Project setup  
 Installed extension Python from Microsoft.  
