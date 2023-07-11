@@ -1,21 +1,27 @@
-# Project setup
+# Quotes Application  
+A web app to display and manage quotes.  
+
+Framework: Django.  
+
+Used IDE: Visual Studio Code.  
+
+# Project setup  
 Installed extension Python from Microsoft.  
-Created project folder.  
-Created virtual environment: View > Command Palette or (Ctrl+Shift+P). Then select the Python: Select Interpreter command.  
+Created virtual environment: View > Command Palette or (Ctrl+Shift+P) - Select Interpreter command.  
 Installed Django.  
 Started project: django-admin startproject quotes .  
+Created app: python manage.py startapp appname  
+Registered app in project settings INSTALLED_APPS.  
 Added docutils path to project urls, settings INSTALLED_APPS and MIDDLEWARE.  
 Installed admindoc: pip install docutils  
-Create user: python manage.py createsuperuser  
+Created user: python manage.py createsuperuser  
 Installed psycopg2.  
 
 # Start app  
-python manage.py startapp appname  
-Register app in project settings INSTALLED_APPS.  
-Create migration for the model item:  
-python manage.py makemigrations    - may also add app name to the end
-Create db:  
-python manage.py migrate
+Created migration for the model item:  
+python manage.py makemigrations    
+Created db:  
+python manage.py migrate  
 
 # Run the project  
-python manage.py runserver
+python manage.py runserver  
