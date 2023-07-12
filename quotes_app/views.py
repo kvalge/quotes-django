@@ -1,9 +1,10 @@
 from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
+from django.template import RequestContext
 from .forms import QuoteForm
 from quotes_app.models import Quote
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
 
 
 def home(response):
@@ -11,7 +12,6 @@ def home(response):
     return render(response, "home.html", {"quotes": quotes})
 
 
-@csrf_protect
 def new(request):
     if request.method == "POST":    
         quote_req = QuoteForm(request.POST)
@@ -32,7 +32,6 @@ def edit(response):
     return render(response, "edit.html", {"quotes": quotes})
     
     
-@csrf_protect
 def update(request,id):
     try:
         old_data = get_object_or_404(Quote,id =id)
@@ -53,7 +52,7 @@ def update(request,id):
     return render(request, 'update.html', {'form': form})
 
 
-@csrf_protect
+@csrf_exempt
 def delete(request, id):
     try:
         data = get_object_or_404(Quote,id = id)
@@ -62,7 +61,7 @@ def delete(request, id):
  
     if request.method == 'POST':
         data.delete()
-        return redirect('/edit')
+        return redirect('/edit', RequestContext(request))
     else:
         return render(request, 'delete.html')
 
