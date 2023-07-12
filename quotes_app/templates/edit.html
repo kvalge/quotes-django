@@ -8,7 +8,7 @@
     <h3>{{quote.author}}</h3>
     <div class="quote">{{quote.quote}}</div>
     <br>
-        <form action="/{{quote.id}}" method=post>
+        <form action="/update/{{quote.id}}" method=post>
             {% csrf_token %}
         <input type="hidden" name="id" value="">
         <input type="submit" value="Update" class="button"/>
