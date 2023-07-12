@@ -5,5 +5,6 @@ urlpatterns = [
     path("", views.home, name='home'),
     path("new/", views.new, name='new'),
     path("edit/", views.edit, name='edit'),
-    # path("update/<int:id>", views.update, name='update')
+    path("update/<int:id>", views.update, name='update'),
+    path("delete/<int:id>", views.delete, name='delete'),
 ]
