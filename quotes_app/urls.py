@@ -7,4 +7,5 @@ urlpatterns = [
     path("edit/", views.edit, name='edit'),
     path("update/<int:id>", views.update, name='update'),
     path("delete/<int:id>", views.delete, name='delete'),
+    path("<str:area>/", views.area, name = 'area')
 ]

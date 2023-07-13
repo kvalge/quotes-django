@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mt-4 mb-4">Quotes by Area</h1>
+<div class="container">
+{% for quote in quotes %}
+<br>
+<div class="title">{{quote.author}}</div>
+<div>{{ quote.years }}</div>
+<div>{{ quote.area }}</div>
+<img class="crop" src="{{quote.image}}" alt="{{quote.author}}">
+<div class="quote">{{ quote.quote}}</div>
+<div>_____________________</div>
+<br>
+{% endfor %}
+</div>
+{% endblock %}

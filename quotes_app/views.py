@@ -12,6 +12,11 @@ def home(response):
     return render(response, "home.html", {"quotes": quotes})
 
 
+def area(response, area):
+    quotes = Quote.objects.filter(area=area).order_by('author')
+    return render(response, "area.html", {"quotes": quotes})
+
+
 def new(request):
     if request.method == "POST":    
         quote_req = QuoteForm(request.POST)
@@ -32,7 +37,7 @@ def edit(response):
     return render(response, "edit.html", {"quotes": quotes})
     
     
-def update(request,id):
+def update(request, id):
     try:
         old_data = get_object_or_404(Quote,id =id)
     except Exception:
