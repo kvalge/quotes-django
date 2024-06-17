@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mt-4 mb-4">{{ quotes.author }}</h1>
+<h2 class="mt-4 mb-4">{{ quotes.years }}</h2>
+<div class="container">
+    {% for quote in quotes %}
+    <br>
+    <img class="crop" src="{{ quote.image }}" alt="{{ quote.author }}">
+    <div class="quote">{{ quote.quote }}</div>
+    <div>_____________________</div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}

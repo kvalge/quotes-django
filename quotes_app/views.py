@@ -12,6 +12,16 @@ def home(response):
     return render(response, "home.html", {"quotes": quotes})
 
 
+def search(request):
+    if request.method == "POST":
+        author = request.POST.get('author', None)
+        if author:
+            quotes = Quote.objects.filter(author__contains=author)
+            return render(request, 'search/', {"quotes":quotes})
+
+    return render(request, 'search/')
+
+
 def area(response, area):
     quotes = Quote.objects.filter(area=area).order_by('author')
     return render(response, "area.html", {"quotes": quotes})
@@ -69,4 +79,8 @@ def delete(request, id):
         return redirect('/edit', RequestContext(request))
     else:
         return render(request, 'delete.html')
+    
+
+def statistics(response):
+    return render(response, 'statistics.html')
 

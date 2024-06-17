@@ -2,6 +2,12 @@
 {% block content %}
 <h1 class="mt-4 mb-4">The Most Famous Quotes of All Time</h1>
 <div class="container">
+    <br>
+    <form name="author" method="POST" action="/search/">
+        {% csrf_token %}
+        <input name="author" type="text" placeholder="Search by author" onfocus="this.value=''" value=""/>
+        <button type="submit">Search</button>
+    </form>
 {% for quote in quotes %}
 <br>
 <div class="title">{{quote.author}}</div>
